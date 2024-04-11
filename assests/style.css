@@ -9,10 +9,10 @@ body{
 
 }
 .navbar{
-    background-color: black;
+    background-color: peachpuff;
     color: white;
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -48,6 +48,12 @@ body{
     color: white;
 
 }
+.navbar-links a{
+    color: blue;
+    font-size:medium;
+}    
+
+
 .navbar-links a:hover{
     text-decoration: underline;
     color: white;

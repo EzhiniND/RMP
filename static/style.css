@@ -60,7 +60,7 @@ body {
 
 }
 .navbar-links a{
-    color: blue
+    color: blue;
 }    
 .navbar-links a:hover{
     text-decoration: underline;

@@ -11,8 +11,8 @@ body {
     min-height: 100vh;
 }
 .navbar{
-    background-color: peachpuff;
-    color: white;
+    background-color: rgb(85, 55, 29);
+    color: rgb(244, 231, 231);
     display:flex;
     justify-content:space-around;
     align-items: center;
@@ -25,6 +25,7 @@ body {
     width: 100%;
     z-index: 1000;
     margin-right:50px ;
+    
 
 
 }
@@ -47,24 +48,54 @@ body {
     margin-right:50px ;
 
 }
-.navbar-links{
+.navbar-links {
     color: aliceblue;
     display: flex;
-    gap: 50px;
-    margin-right:50px ;
+    gap: 40px;  /* Default gap */
+    margin-right: 40px;
+    justify-content: center;
+    flex-wrap: no-wrap; /* Ensures all items are in one line */
+     /* Allows scrolling if items do not fit */
 }
+
+/* Reduce the gap when the screen width is less than 1200px */
+@media (max-width: 1200px) {
+    .navbar-links {
+        gap: 30px;
+    }
+}
+
+/* Further reduce the gap when the screen width is less than 800px */
+@media (max-width: 800px) {
+    .navbar-links {
+        gap: 15px;
+    }
+}
+
+/* Further reduce the gap when the screen width is less than 600px */
+@media (max-width: 600px) {
+    .navbar-links {
+        gap: 8px;
+    }
+}
+
 .navbar-link{
     color: white;
-    margin-right:50px ;
+    margin-right:20px ;
+    padding: 10px 10px;
+
 
 
 }
 .navbar-links a{
-    color: blue;
+    color: rgb(236, 227, 227);
+    justify-content: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }    
 .navbar-links a:hover{
     text-decoration: underline;
-    color: white;
+    color: blue;
+    transition-duration: 0.3s;
 }
 .navbar-menu{
     display: none;
@@ -84,12 +115,16 @@ body {
     .products-container {
         flex-basis: calc(50% - 80px); /* Adjust as needed */
         margin: 80px; /* Adjust as needed */
-    }
+        margin-top: 25%; 
+        height: 350px; /* Only the top margin is changed to 20% */
+    }  
 }
 @media screen and (max-width: 480px) {
     .products-container {
         flex-basis: calc(100% - 80px); /* Adjust as needed */
-        margin: 80px; /* Adjust as needed */
+        margin: 80px;
+        margin-top: 35px;
+        height: 300px; /* Adjust as needed */
     }
 }
 
@@ -144,7 +179,7 @@ body {
 /* General Footer Styles */
 footer {
     margin-top: 60px;
-    background-color: #343333;
+    background-color: rgb(85, 55, 29);
     color: white;
     padding: 40px;
     text-align: center;
@@ -183,13 +218,22 @@ p {
     margin: 5px 10px;
     display:inline;
 }
-.about{
+.about h3{
 
     padding: 10px;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
+    background-color: bisque;
+    margin: 35px;
+    text-align: justify;
+    box-shadow: #393434;
+    border-radius: 10px; /* Adjusts all corners */
+
 
 }
+.about p{
+    margin: 40px;
+} 
 
 
 .slider-wrapper {
@@ -264,12 +308,16 @@ img {
 
 }
 .products-container{
-    height: 250px;
+    height: 400px;
     width: 250px;
     position: relative;
     flex-basis: 20%;
     margin: 10%;
     box-sizing: border-box;
+    background-color: rgb(208, 172, 172);
+    padding: 20px;
+    
+    
    
 
 

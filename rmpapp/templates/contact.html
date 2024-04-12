@@ -18,10 +18,15 @@
         .form-group {
             display: flex;
             flex-direction: column; /* Align items in a column */
-            padding: 20px;
+            padding: 15px;
+            size: 70px;
         }
         .form-control {
             margin-bottom: 10px; /* Add some space between input boxes */
+        }
+        .button{
+            align-items: center;
+            justify-content: center;
         }
       
     </style>
@@ -64,7 +69,8 @@
                 </div>
                 <div class="form-group">
                     <label for="id_phone_number">Phone Number:</label>
-                    <input type="text" class="form-control" id="id_phone_number" name="phone_number" required>
+                    <input type="text" class="form-control" id="id_phone_number" name="phone_number" pattern="[0-9]{10}" required>
+                    
                 </div>
                 <div class="form-group">
                     <label for="id_message">Message:</label>

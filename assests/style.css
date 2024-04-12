@@ -3,23 +3,30 @@
     margin: 0;
 }
 
-body{
-    font-family: 'Poppins',sans-serif;
-    margin-bottom: 50px;
-
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 .navbar{
-    background-color: peachpuff;
-    color: white;
+    background-color: rgb(85, 55, 29);
+    color: rgb(244, 231, 231);
     display:flex;
-    justify-content: space-around;
+    justify-content:space-around;
     align-items: center;
     padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    margin-right:50px ;
+    
+
 
 }
 .nav-cart{
@@ -38,25 +45,57 @@ body{
     font-weight: bold;
     text-align: center;
     border-radius: 50%;
+    margin-right:50px ;
+
 }
-.navbar-links{
+.navbar-links {
     color: aliceblue;
     display: flex;
-    column-gap: 20px;
+    gap: 40px;  /* Default gap */
+    margin-right: 40px;
+    justify-content: center;
+    flex-wrap: no-wrap; /* Ensures all items are in one line */
+     /* Allows scrolling if items do not fit */
 }
+
+/* Reduce the gap when the screen width is less than 1200px */
+@media (max-width: 1200px) {
+    .navbar-links {
+        gap: 30px;
+    }
+}
+
+/* Further reduce the gap when the screen width is less than 800px */
+@media (max-width: 800px) {
+    .navbar-links {
+        gap: 15px;
+    }
+}
+
+/* Further reduce the gap when the screen width is less than 600px */
+@media (max-width: 600px) {
+    .navbar-links {
+        gap: 8px;
+    }
+}
+
 .navbar-link{
     color: white;
+    margin-right:20px ;
+    padding: 10px 10px;
+
+
 
 }
 .navbar-links a{
-    color: blue;
-    font-size:medium;
+    color: rgb(236, 227, 227);
+    justify-content: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }    
-
-
 .navbar-links a:hover{
     text-decoration: underline;
-    color: white;
+    color: blue;
+    transition-duration: 0.3s;
 }
 .navbar-menu{
     display: none;
@@ -72,15 +111,20 @@ body{
     color: white;
     transition:2s;
 }
-@media screen and (max-width:600px){
-    .navbar-menu{
-        display: block;
-    }
-    .navbar-links{
-        display:none;
-    }
-    .header-img{
-        display: none;
+@media screen and (max-width: 768px) {
+    .products-container {
+        flex-basis: calc(50% - 80px); /* Adjust as needed */
+        margin: 80px; /* Adjust as needed */
+        margin-top: 25%; 
+        height: 350px; /* Only the top margin is changed to 20% */
+    }  
+}
+@media screen and (max-width: 480px) {
+    .products-container {
+        flex-basis: calc(100% - 80px); /* Adjust as needed */
+        margin: 80px;
+        margin-top: 35px;
+        height: 300px; /* Adjust as needed */
     }
 }
 
@@ -122,7 +166,8 @@ body{
     position: relative;
 }
 .head1{
-    padding: 50px;
+    margin-top: 10px;
+    padding: 30px;
     color: black;
     text-align: center;
     font-weight: bolder;
@@ -133,8 +178,8 @@ body{
 }
 /* General Footer Styles */
 footer {
-    margin-top: 40px;
-    background-color: #343333;
+    margin-top: 60px;
+    background-color: rgb(85, 55, 29);
     color: white;
     padding: 40px;
     text-align: center;
@@ -173,13 +218,22 @@ p {
     margin: 5px 10px;
     display:inline;
 }
-.about{
+.about h3{
 
     padding: 10px;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
+    background-color: bisque;
+    margin: 35px;
+    text-align: justify;
+    box-shadow: #393434;
+    border-radius: 10px; /* Adjusts all corners */
+
 
 }
+.about p{
+    margin: 40px;
+} 
 
 
 .slider-wrapper {
@@ -230,7 +284,7 @@ img {
     transition: 0.5s;
 }
 /* Add this style to your existing CSS */
-.cart-products {
+.cart-container {
     position: fixed;
     top: 10px;
     right: 0;
@@ -238,7 +292,12 @@ img {
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
 }
+
+
+
 
 
 .products h5{
@@ -249,12 +308,17 @@ img {
 
 }
 .products-container{
-    height: 150px;
-    width: 150px;
+    height: 400px;
+    width: 250px;
     position: relative;
     flex-basis: 20%;
     margin: 10%;
-    cursor: pointer;
+    box-sizing: border-box;
+    background-color: rgb(208, 172, 172);
+    padding: 20px;
+    
+    
+   
 
 
 }
@@ -310,5 +374,55 @@ img {
     border: none;
     outline: none;
     cursor: pointer;
+}
+
+.add-to-cart-btn{
+    margin: 40%;
+}
+.cart-quantity{
+    margin: 10px;
+}
+/* Add these styles to your existing CSS */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Initially position it outside the viewport */
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+}
+
+.sidebar-content {
+    padding: 20px;
+}
+
+.close-sidebar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #333;
+}
+/* Your existing styles */
+
+/* Add the following styles for the delete button */
+.delete-product-btn {
+    background-color: #ff0000; /* Background color for the button */
+    color: #ffffff; /* Text color for the button */
+    padding: 5px 10px; /* Padding around the button content */
+    border: none; /* Remove border */
+    cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+/* If you're using an icon, you may need to style it separately */
+.delete-product-btn .icon {
+    /* Add styles for your icon, such as font-size, color, etc. */
+    font-size: 18px;
+    margin-right: 5px; /* Add some spacing between the text and the icon */
 }
 

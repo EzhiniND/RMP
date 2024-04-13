@@ -42,17 +42,16 @@ def submit_order(request):
         try:
             cart_details = json.loads(cart_details_json)
             cart_products = cart_details.get('products', [])
-            cart_total = cart_details.get('total', 0)
+           
         except json.JSONDecodeError:
             # Handle JSON decoding error
             cart_products = []
-            cart_total = 0
 
         # Build the email message
         subject = 'New Order'
         message = f'New Order\n\nPerson Details:\nName: {name}\nAddress: {address}\nPhone Number: {phone_number}\n\nCart Details:'
         for product in cart_products:
-            message += f'\nProduct: {product["name"]} - Quantity: {product["quantity"]} - Total: Rs.{product["totalAmount"]}'
+            message += f'\nProduct: {product["name"]} - Quantity: {product["quantity"]} kg'
         
 
         # Send the email and get the result
@@ -66,7 +65,6 @@ def submit_order(request):
 
         # Clear the cart after submitting the order
         request.session['cartProducts'] = []
-        request.session['cartTotal'] = 0
 
         return redirect('home')  # Redirect to the home page or any desired URL
 

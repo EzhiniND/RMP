@@ -26,8 +26,6 @@ body {
     z-index: 1000;
     margin-right:50px ;
     
-
-
 }
 .nav-cart{
     cursor: pointer;
@@ -51,17 +49,31 @@ body {
 .navbar-links {
     color: aliceblue;
     display: flex;
-    gap: 40px;  /* Default gap */
+    gap: 10px;  /* Default gap */
     margin-right: 40px;
-    justify-content: center;
+    justify-content: start;
     flex-wrap: no-wrap; /* Ensures all items are in one line */
      /* Allows scrolling if items do not fit */
 }
 
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .navbar a {
+        font-size: 10px; /* Adjust font size or padding as necessary */
+    }
+}
 /* Reduce the gap when the screen width is less than 1200px */
 @media (max-width: 1200px) {
     .navbar-links {
-        gap: 30px;
+        gap: 10px;
+    }
+    .navbar a {
+        font-size: 13px; /* Adjust font size or padding as necessary */
     }
 }
 
@@ -81,11 +93,9 @@ body {
 
 .navbar-link{
     color: white;
-    margin-right:20px ;
+    margin-right:10px ;
+    gap: 5px;
     padding: 10px 10px;
-
-
-
 }
 .navbar-links a{
     color: rgb(236, 227, 227);
@@ -110,22 +120,6 @@ body {
     padding: 20px;
     color: white;
     transition:2s;
-}
-@media screen and (max-width: 768px) {
-    .products-container {
-        flex-basis: calc(50% - 80px); /* Adjust as needed */
-        margin: 80px; /* Adjust as needed */
-        margin-top: 25%; 
-        height: 350px; /* Only the top margin is changed to 20% */
-    }  
-}
-@media screen and (max-width: 480px) {
-    .products-container {
-        flex-basis: calc(100% - 80px); /* Adjust as needed */
-        margin: 80px;
-        margin-top: 35px;
-        height: 300px; /* Adjust as needed */
-    }
 }
 
 
@@ -176,6 +170,22 @@ body {
     
 
 }
+.products-container img{
+    width: 250px;
+    height: 200px;
+    overflow: hidden;
+    object-fit: cover;
+   
+
+}
+@media (max-width: 1200px) {
+    .products-container img {
+        width: 100%; /* Set the container width to 100% when the screen width is less than or equal to 200px */
+        height: 25%; 
+        object-fit: cover;/* Allow the height to adjust according to the aspect ratio */
+    }
+}
+
 /* General Footer Styles */
 footer {
     margin-top: 60px;
@@ -218,6 +228,10 @@ p {
     margin: 5px 10px;
     display:inline;
 }
+.about{
+    margin-left: 10px;
+    margin-right: 10px;
+}
 .about h3{
 
     padding: 10px;
@@ -231,8 +245,12 @@ p {
 
 
 }
-.about p{
-    margin: 40px;
+.about .aboutp{
+    margin-left: 20px;
+    margin-right: 10px;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
 } 
 
 
@@ -295,11 +313,6 @@ img {
     display: flex;
     flex-direction: column;
 }
-
-
-
-
-
 .products h5{
     margin-top: 10px;
     background-color: darkblue;
@@ -314,13 +327,25 @@ img {
     flex-basis: 20%;
     margin: 10%;
     box-sizing: border-box;
-    background-color: rgb(208, 172, 172);
+    background-color: white;
     padding: 20px;
-    
-    
-   
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 
+}
+
+@media screen and (max-width: 900px) {
+    .products-container {
+        height: 300px; /* Reduce height as screen size decreases */
+        margin: 5%; /* Adjust margin as needed */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .products-container {
+        height: 250px; /* Further reduce height as screen size decreases */
+        margin: 3%; /* Adjust margin as needed */
+    }
 }
 .products-container button{
     padding-left: 10%;

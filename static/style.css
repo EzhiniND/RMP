@@ -17,8 +17,8 @@ body {
     justify-content:space-around;
     align-items: center;
     padding: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     position: fixed;
     top: 0;
@@ -62,6 +62,9 @@ body {
         justify-content: space-between;
         gap: 12px;
     }
+    .navbar-links {
+       margin-left: 20px;
+    }
 
     .navbar a {
         font-size: 10px; /* Adjust font size or padding as necessary */
@@ -79,23 +82,32 @@ body {
 
 /* Further reduce the gap when the screen width is less than 800px */
 @media (max-width: 800px) {
+    .navbar{
+        font-size: small;
+    }
     .navbar-links {
-        gap: 15px;
+        margin-left:2px;
     }
 }
 
 /* Further reduce the gap when the screen width is less than 600px */
 @media (max-width: 600px) {
+    .navbar{
+        font-size: small;
+    }
     .navbar-links {
-        gap: 8px;
+        color: white;
+        font-size: smaller;
+        font-weight: bold;
+        margin-right:2px ;
+        padding: 10px 1px;
     }
 }
 
 .navbar-link{
     color: white;
-    margin-right:10px ;
-    gap: 5px;
-    padding: 10px 10px;
+    margin-right:8px ;
+    padding: 10px 2px;
 }
 .navbar-links a{
     color: rgb(236, 227, 227);

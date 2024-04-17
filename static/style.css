@@ -78,14 +78,16 @@ body {
 
 @media (max-width: 768px) {
     .navbar-links {
-        flex-direction: column;
-        display: none;
         position: absolute;
-        top: 60px;
-        right: 0;
         left: 0;
+        right: 0;
+        top: 60px;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        margin-right: 30px;
+
         background-color: rgb(85, 0, 0,0.5);
-        /* Adjust based on your color scheme */
         width: 100%;
         text-align: center;
     }
@@ -105,8 +107,6 @@ body {
   
 }
 
-<<<<<<< HEAD
-=======
 /* Further reduce the gap when the screen width is less than 800px */
 @media (max-width: 800px) {
     .navbar{
@@ -126,11 +126,10 @@ body {
         color: white;
         font-size: smaller;
         font-weight: bold;
-        margin-right:2px ;
         padding: 10px 1px;
     }
 }
->>>>>>> 1c87abd15a6170c3b7b092da629a2cad128e9ab4
+
 
 .navbar-link{
     color: white;

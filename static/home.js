@@ -1,3 +1,4 @@
+
 const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
 
 addToCartButtons.forEach((button) => {

@@ -22,7 +22,12 @@
 <body>
     <nav class="navbar">
         <h1>RMP Polymers</h1>
-        <div class="navbar-links">
+        <button class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="navbar-links" id="navbar-links">
+            <i class="close-icon fas fa-times" id="close-icon"></i>
+
             <p class="navbar-link"><a href="{% url 'home_view' %}">Home</a></p>
             <p class="navbar-link"><a href="{% url 'service_view' %}">Products</a></p>
             <div class="nav-cart">
@@ -226,7 +231,26 @@
         </div>   
 </div>
        
-        
+<script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+        var navbarLinks = document.querySelector('.navbar-links');
+        var closeIcon = document.getElementById('close-icon');
+
+        if (navbarLinks.style.display === 'flex') {
+            navbarLinks.style.display = 'none';
+            loseIcon.style.display = 'none';
+        } else {
+            navbarLinks.style.display = 'flex';
+            closeIcon.style.display = 'block';
+        }
+    });
+    document.getElementById('close-icon').addEventListener('click', function() {
+        var navbarLinks = document.getElementById('navbar-links');
+        var closeIcon = document.getElementById('close-icon');
+        navbarLinks.style.display = 'none';
+        closeIcon.style.display = 'none';
+    });
+    </script>     
 <script src="{% static 'home.js' %}"></script>    
 
 

@@ -46,6 +46,14 @@ body {
     margin-right:50px ;
 
 }
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white; /* Adjust based on your color scheme */
+    font-size: 24px;
+    cursor: pointer;
+}
 .navbar-links {
     color: aliceblue;
     display: flex;
@@ -55,41 +63,45 @@ body {
     flex-wrap: no-wrap; /* Ensures all items are in one line */
      /* Allows scrolling if items do not fit */
 }
+.close-icon {
+    display: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+    align-items: center;
+    padding: 5px;
+}
+.navbar-links .close-icon{
+    display: none;
+}
 
 @media (max-width: 768px) {
-    .navbar {
-        padding: 10px;
-        justify-content: space-between;
-        gap: 12px;
+    .navbar-links {
+        flex-direction: column;
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: 0;
+        background-color: rgb(85, 0, 0,0.5);
+        /* Adjust based on your color scheme */
+        width: 100%;
+        text-align: center;
     }
 
-    .navbar a {
-        font-size: 10px; /* Adjust font size or padding as necessary */
+    .hamburger {
+        display: block;
+        align-items: center;
+        text-align: center;
     }
-}
-/* Reduce the gap when the screen width is less than 1200px */
-@media (max-width: 1200px) {
-    .navbar-links {
-        gap: 10px;
+    .close-icon {
+        
+        display: block; /* Show the close icon on smaller screens */
     }
-    .navbar a {
-        font-size: 13px; /* Adjust font size or padding as necessary */
-    }
+  
 }
 
-/* Further reduce the gap when the screen width is less than 800px */
-@media (max-width: 800px) {
-    .navbar-links {
-        gap: 15px;
-    }
-}
-
-/* Further reduce the gap when the screen width is less than 600px */
-@media (max-width: 600px) {
-    .navbar-links {
-        gap: 8px;
-    }
-}
 
 .navbar-link{
     color: white;
@@ -231,6 +243,10 @@ p {
 .about{
     margin-left: 10px;
     margin-right: 10px;
+}
+.about h2{
+    margin: 10px;
+    text-align: center;
 }
 .about h3{
 
